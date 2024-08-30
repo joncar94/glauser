@@ -37,12 +37,12 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet-search.js"></script>
-        <script src="data/FRAC_C_2.js"></script>
-        <script src="data/Lneas_3.js"></script>
+        <script src="data/FRAC_C_1.js"></script>
+        <script src="data/Lneas_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-25.231967298384937,-57.49814801932131],[-25.228851442007826,-57.492708652419694]]);
+        }).fitBounds([[-25.231901014069084,-57.498334592617574],[-25.228785150944784,-57.49289522412237]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -96,16 +96,7 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        map.createPane('pane_FONDO_1');
-        map.getPane('pane_FONDO_1').style.zIndex = 401;
-        var img_FONDO_1 = 'data/FONDO_1.png';
-        var img_bounds_FONDO_1 = [[-25.23265713369863,-57.49931194830061],[-25.22827264583086,-57.49165820634801]];
-        var layer_FONDO_1 = new L.imageOverlay(img_FONDO_1,
-                                              img_bounds_FONDO_1,
-                                              {pane: 'pane_FONDO_1'});
-        bounds_group.addLayer(layer_FONDO_1);
-        map.addLayer(layer_FONDO_1);
-        function pop_FRAC_C_2(feature, layer) {
+        function pop_FRAC_C_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">ID</th>\
@@ -130,9 +121,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_FRAC_C_2_0() {
+        function style_FRAC_C_1_0() {
             return {
-                pane: 'pane_FRAC_C_2',
+                pane: 'pane_FRAC_C_1',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -145,21 +136,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_FRAC_C_2');
-        map.getPane('pane_FRAC_C_2').style.zIndex = 402;
-        map.getPane('pane_FRAC_C_2').style['mix-blend-mode'] = 'normal';
-        var layer_FRAC_C_2 = new L.geoJson(json_FRAC_C_2, {
+        map.createPane('pane_FRAC_C_1');
+        map.getPane('pane_FRAC_C_1').style.zIndex = 401;
+        map.getPane('pane_FRAC_C_1').style['mix-blend-mode'] = 'normal';
+        var layer_FRAC_C_1 = new L.geoJson(json_FRAC_C_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_FRAC_C_2',
-            layerName: 'layer_FRAC_C_2',
-            pane: 'pane_FRAC_C_2',
-            onEachFeature: pop_FRAC_C_2,
-            style: style_FRAC_C_2_0,
+            dataVar: 'json_FRAC_C_1',
+            layerName: 'layer_FRAC_C_1',
+            pane: 'pane_FRAC_C_1',
+            onEachFeature: pop_FRAC_C_1,
+            style: style_FRAC_C_1_0,
         });
-        bounds_group.addLayer(layer_FRAC_C_2);
-        map.addLayer(layer_FRAC_C_2);
-        function pop_Lneas_3(feature, layer) {
+        bounds_group.addLayer(layer_FRAC_C_1);
+        map.addLayer(layer_FRAC_C_1);
+        function pop_Lneas_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
@@ -172,11 +163,11 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Lneas_3_0(feature) {
+        function style_Lneas_2_0(feature) {
             switch(String(feature.properties['ID'])) {
                 default:
                     return {
-                pane: 'pane_Lneas_3',
+                pane: 'pane_Lneas_2',
                 opacity: 1,
                 color: 'rgba(175,78,217,1.0)',
                 dashArray: '',
@@ -184,12 +175,12 @@
                 lineJoin: 'bevel',
                 weight: 1.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case '0':
                     return {
-                pane: 'pane_Lneas_3',
+                pane: 'pane_Lneas_2',
                 opacity: 1,
                 color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
@@ -197,12 +188,12 @@
                 lineJoin: 'bevel',
                 weight: 3.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case '1':
                     return {
-                pane: 'pane_Lneas_3',
+                pane: 'pane_Lneas_2',
                 opacity: 1,
                 color: 'rgba(255,252,89,1.0)',
                 dashArray: '',
@@ -210,12 +201,12 @@
                 lineJoin: 'bevel',
                 weight: 3.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
                     break;
                 case '2':
                     return {
-                pane: 'pane_Lneas_3',
+                pane: 'pane_Lneas_2',
                 opacity: 1,
                 color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
@@ -223,33 +214,33 @@
                 lineJoin: 'bevel',
                 weight: 3.0,
                 fillOpacity: 0,
-                interactive: false,
+                interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_Lneas_3');
-        map.getPane('pane_Lneas_3').style.zIndex = 403;
-        map.getPane('pane_Lneas_3').style['mix-blend-mode'] = 'normal';
-        var layer_Lneas_3 = new L.geoJson(json_Lneas_3, {
+        map.createPane('pane_Lneas_2');
+        map.getPane('pane_Lneas_2').style.zIndex = 402;
+        map.getPane('pane_Lneas_2').style['mix-blend-mode'] = 'normal';
+        var layer_Lneas_2 = new L.geoJson(json_Lneas_2, {
             attribution: '',
-            interactive: false,
-            dataVar: 'json_Lneas_3',
-            layerName: 'layer_Lneas_3',
-            pane: 'pane_Lneas_3',
-            onEachFeature: pop_Lneas_3,
-            style: style_Lneas_3_0,
+            interactive: true,
+            dataVar: 'json_Lneas_2',
+            layerName: 'layer_Lneas_2',
+            pane: 'pane_Lneas_2',
+            onEachFeature: pop_Lneas_2,
+            style: style_Lneas_2_0,
         });
-        bounds_group.addLayer(layer_Lneas_3);
-        map.addLayer(layer_Lneas_3);
+        bounds_group.addLayer(layer_Lneas_2);
+        map.addLayer(layer_Lneas_2);
         setBounds();
         var i = 0;
-        layer_FRAC_C_2.eachLayer(function(layer) {
+        layer_FRAC_C_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #fffc59; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_FRAC_C_2'});
+            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #fffc59; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_FRAC_C_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -257,26 +248,21 @@
               i++;
         });
         map.addControl(new L.Control.Search({
-            layer: layer_FRAC_C_2,
+            layer: layer_FRAC_C_1,
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'NOMBRE'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
-        L.ImageOverlay.include({
-            getBounds: function () {
-                return this._bounds;
-            }
-        });
-        resetLabels([layer_FRAC_C_2]);
+        resetLabels([layer_FRAC_C_1]);
         map.on("zoomend", function(){
-            resetLabels([layer_FRAC_C_2]);
+            resetLabels([layer_FRAC_C_1]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_FRAC_C_2]);
+            resetLabels([layer_FRAC_C_1]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_FRAC_C_2]);
+            resetLabels([layer_FRAC_C_1]);
         });
         </script>
     </body>
